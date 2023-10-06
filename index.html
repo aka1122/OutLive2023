@@ -15,6 +15,12 @@
             flex-direction: column; /* Center content vertically and top-aligned horizontally */
             position: center; /* Add position:relative to create a reference for the footer */
         }
+        .title {
+            align-items: center;
+            color: white; /* Set text color to white */
+            
+            font-size: 18px; /* Increase the font size for the entire page */
+        }
         .window {
             background-color: #3B4252;
             width: 80%; /* Set the width as a percentage of the viewport width */
@@ -105,6 +111,9 @@
     </style>
 </head>
 <body>
+    <div class="title">
+        <h1><font face="微軟正黑體">逃出病房文化祭2023</font></h1>
+    </div>
     <div class="window">
         <div class="content">
             <!-- Add an image to the center window -->
@@ -176,6 +185,26 @@
         function buyTicket() {
             hideAllContainers();
             document.querySelector('.ticket-container').style.display = 'block';
+            
+            // Get the values from the input fields
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const ticketAmount = document.getElementById('ticket-amount').value;
+        
+            // Create a data object to send to the server
+            const data = {
+                name,
+                phone,
+                email,
+                ticketAmount
+            };
+        
+            // Send the data to the server (in this example, just log it to the console)
+            console.log(data);
+        
+            // You would typically send the data to a server and then use the Google Sheets API
+            // to add it to a Google Sheet. You'll need server-side code to do this securely.
         }
 
         function submitTicket() {
@@ -212,6 +241,26 @@
             document.querySelector('.window').style.display = 'block';
             document.querySelector('.button-container').style.display = 'block';
         }
+        
+        function submitDataToGoogleSheet() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const ticketAmount = document.getElementById('ticket-amount').value;
+          
+            const scriptURL = "https://script.google.com/macros/s/AKfycbxbIPVDxMg7f_afRWgiGH0FF9F9JQThim7IDoqi5-DxWy4aPbqC1CB7HfGF-bbSAC-v/exec";
+            const requestURL = `${scriptURL}?type=saveData&name=${name}&phone=${phone}&email=${email}&ticketAmount=${ticketAmount}`;
+        
+            fetch(requestURL)
+                .then(response => response.text())
+                .then(data => {
+                alert(data); // Display the response from Google Apps Script
+                })
+                .catch(error => {
+                // Handle any errors
+            });
+        }
+
     </script>
 </body>
 </html>
