@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Your Website Title</title>
     <style>
         body {
             background-color: #2E3440;
-            color: white; /* Set text color to white */
-            font-size: 18px; /* Increase the font size for the entire page */
+            color: white;
+            /* Set text color to white */
+            font-size: 18px;
+            /* Increase the font size for the entire page */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column; /* Center content vertically and top-aligned horizontally */
-            position: center; /* Add position:relative to create a reference for the footer */
+            flex-direction: column;
+            /* Center content vertically and top-aligned horizontally */
+            position: center;
+            /* Add position:relative to create a reference for the footer */
         }
+
         .title {
             align-items: center;
-            color: white; /* Set text color to white */
-            
-            font-size: 18px; /* Increase the font size for the entire page */
+            color: white;
+            /* Set text color to white */
+            font-size: 18px;
+            /* Increase the font size for the entire page */
         }
+
         .window {
             background-color: #3B4252;
-            width: 80%; /* Set the width as a percentage of the viewport width */
-            padding-top: 80%; /* Set the height as a percentage of the width to create a square */
+            width: 80%;
+            /* Set the width as a percentage of the viewport width */
+            padding-top: 80%;
+            /* Set the height as a percentage of the width to create a square */
             position: relative;
             border-radius: 10px;
             align-items: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         .content {
             position: absolute;
             top: 0;
@@ -41,38 +52,50 @@
             justify-content: center;
             align-items: center;
         }
+
         img {
-            max-width: 90%; /* Ensure the image does not exceed the width of the container */
-            max-height: 90%; /* Ensure the image does not exceed the height of the container */
+            max-width: 90%;
+            /* Ensure the image does not exceed the width of the container */
+            max-height: 90%;
+            /* Ensure the image does not exceed the height of the container */
             border-radius: 5px;
         }
+
         .button-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 70%; /* Set the width of the button container to 70% for wider buttons */
+            width: 70%;
+            /* Set the width of the button container to 70% for wider buttons */
             height: 30%;
         }
+
         .ticket-container,
         .contact-container,
         .check-ticket-container {
-            display: none; /* Initially hide the ticket, contact, and check-ticket containers */
+            display: none;
+            /* Initially hide the ticket, contact, and check-ticket containers */
             width: 80%;
             height: 80%;
             align-items: center;
         }
+
         button {
-            margin-top: 20px; /* Add space between the square window and the buttons */
-            width: 90%; /* Set the width of the buttons to 100% to keep them aligned */
+            margin-top: 20px;
+            /* Add space between the square window and the buttons */
+            width: 90%;
+            /* Set the width of the buttons to 100% to keep them aligned */
             background-color: #4C566A;
             color: white;
-            font-size: 16px; /* Adjust the font size as needed */
+            font-size: 16px;
+            /* Adjust the font size as needed */
             padding: 12px;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             align-items: center;
         }
+
         footer {
             position: fixed;
             bottom: 0;
@@ -80,9 +103,12 @@
             color: white;
             padding: 15px;
         }
+
         footer a {
-            color: #FFFFFF; /* Set your desired link (anchor) color */
+            color: #FFFFFF;
+            /* Set your desired link (anchor) color */
         }
+
         .ticket-container div,
         .contact-container div,
         .check-ticket-container div {
@@ -91,12 +117,14 @@
             align-items: center;
             margin: 10px;
         }
+
         .ticket-container label,
         .contact-container label,
         .check-ticket-container label {
             align-items: center;
             width: 70%;
         }
+
         .ticket-container input,
         .contact-container input,
         .check-ticket-container input {
@@ -105,20 +133,19 @@
             padding: 10px;
             border-radius: 5px;
         }
-        
-        
-        
     </style>
 </head>
+
 <body>
     <div class="title">
-        <h1><font face="微軟正黑體">逃出病房文化祭2023</font></h1>
+        <h1>
+            <font face="微軟正黑體">逃出病房文化祭2023</font>
+        </h1>
     </div>
     <div class="window">
         <div class="content">
             <!-- Add an image to the center window -->
-            <img src="https://img.alicdn.com/imgextra/i1/2216671662746/O1CN01A4AY7O1W9iTwWMba2_!!2216671662746-2-ampmedia.png" 
-                 alt="Description of the image">
+            <img src="https://img.alicdn.com/imgextra/i1/2216671662746/O1CN01A4AY7O1W9iTwWMba2_!!2216671662746-2-ampmedia.png" alt="Description of the image">
         </div>
     </div>
     <div class="button-container">
@@ -130,7 +157,7 @@
         <!-- Add content for the purchased ticket container -->
         <h2>Your Ticket Information</h2>
         <p>This is your purchased ticket information.</p>
-        
+
         <h3>Personal Information</h3>
         <div>
             <label for="name">Name:</label>
@@ -156,7 +183,7 @@
         <div>
             <input type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
         </div>
-        
+
         <div>
             <button onclick="submitTicket()">Submit</button>
         </div>
@@ -185,13 +212,13 @@
         function buyTicket() {
             hideAllContainers();
             document.querySelector('.ticket-container').style.display = 'block';
-            
+
             // Get the values from the input fields
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const ticketAmount = document.getElementById('ticket-amount').value;
-        
+
             // Create a data object to send to the server
             const data = {
                 name,
@@ -199,10 +226,10 @@
                 email,
                 ticketAmount
             };
-        
+
             // Send the data to the server (in this example, just log it to the console)
             console.log(data);
-        
+
             // You would typically send the data to a server and then use the Google Sheets API
             // to add it to a Google Sheet. You'll need server-side code to do this securely.
         }
@@ -210,11 +237,48 @@
         function submitTicket() {
             // Handle the submission of the ticket information here
             alert('Ticket submitted successfully!');
-            // Clear the input fields if needed
+            
+            // Handle the submission of the ticket information
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const ticketAmount = document.getElementById('ticket-amount').value;
+
+            // Perform client-side validation here if needed
+
+            // Send data to Google Apps Script
+            submitDataToGoogleScript(name, phone, email, ticketAmount);
+        }
+        
+        function clearFormFields() {
+            // Clear input fields
             document.getElementById('name').value = '';
             document.getElementById('phone').value = '';
             document.getElementById('email').value = '';
             document.getElementById('ticket-amount').value = '';
+        }
+        
+        function submitDataToGoogleScript(name, phone, email, ticketAmount) {
+            const scriptURL = "YOUR_GOOGLE_APPS_SCRIPT_URL";
+            const data = new FormData();
+            data.append('Name', name);
+            data.append('Phone', phone);
+            data.append('Email', email);
+            data.append('TicketAmount', ticketAmount);
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Display the response from Google Apps Script
+                clearFormFields();
+                backToHomePage();
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
         }
 
         function showContactPage() {
@@ -233,7 +297,7 @@
             document.querySelector('.ticket-container').style.display = 'none';
             document.querySelector('.contact-container').style.display = 'none';
             document.querySelector('.check-ticket-container').style.display = 'none';
-            
+
         }
 
         function backToHomePage() {
@@ -241,26 +305,26 @@
             document.querySelector('.window').style.display = 'block';
             document.querySelector('.button-container').style.display = 'block';
         }
-        
+
         function submitDataToGoogleSheet() {
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const ticketAmount = document.getElementById('ticket-amount').value;
-          
+
             const scriptURL = "https://script.google.com/macros/s/AKfycbxbIPVDxMg7f_afRWgiGH0FF9F9JQThim7IDoqi5-DxWy4aPbqC1CB7HfGF-bbSAC-v/exec";
             const requestURL = `${scriptURL}?type=saveData&Name=${name}&Phone=${phone}&Email=${email}&TicketAmount=${ticketAmount}`;
-        
+
             fetch(requestURL)
                 .then(response => response.text())
                 .then(data => {
-                alert(data); // Display the response from Google Apps Script
+                    alert(data); // Display the response from Google Apps Script
                 })
                 .catch(error => {
-                // Handle any errors
-            });
+                    // Handle any errors
+                });
         }
-
     </script>
 </body>
+
 </html>
