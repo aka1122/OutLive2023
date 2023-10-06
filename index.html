@@ -249,7 +249,7 @@
             const ticketAmount = document.getElementById('ticket-amount').value;
           
             const scriptURL = "https://script.google.com/macros/s/AKfycbxbIPVDxMg7f_afRWgiGH0FF9F9JQThim7IDoqi5-DxWy4aPbqC1CB7HfGF-bbSAC-v/exec";
-            const requestURL = `${scriptURL}?type=saveData&name=${name}&phone=${phone}&email=${email}&ticketAmount=${ticketAmount}`;
+            const requestURL = `${scriptURL}?type=saveData&Name=${name}&Phone=${phone}&Email=${email}&TicketAmount=${ticketAmount}`;
         
             fetch(requestURL)
                 .then(response => response.text())
