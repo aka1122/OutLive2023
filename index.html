@@ -6,13 +6,14 @@
         body {
             background-color: #2E3440;
             color: white; /* Set text color to white */
+            font-size: 18px; /* Increase the font size for the entire page */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             flex-direction: column; /* Center content vertically and top-aligned horizontally */
-            position: relative; /* Add position:relative to create a reference for the footer */
+            position: center; /* Add position:relative to create a reference for the footer */
         }
         .window {
             background-color: #3B4252;
@@ -20,6 +21,7 @@
             padding-top: 80%; /* Set the height as a percentage of the width to create a square */
             position: relative;
             border-radius: 10px;
+            align-items: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .content {
@@ -47,23 +49,31 @@
         .contact-container,
         .check-ticket-container {
             display: none; /* Initially hide the ticket, contact, and check-ticket containers */
+            width: 80%;
+            height: 80%;
+            align-items: center;
         }
         button {
             margin-top: 20px; /* Add space between the square window and the buttons */
-            width: 100%; /* Set the width of the buttons to 100% to keep them aligned */
+            width: 90%; /* Set the width of the buttons to 100% to keep them aligned */
             background-color: #4C566A;
             color: white;
-            padding: 10px 20px;
+            font-size: 16px; /* Adjust the font size as needed */
+            padding: 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
+            align-items: center;
         }
         footer {
             position: fixed;
             bottom: 0;
             right: 0;
             color: white;
-            padding: 10px;
+            padding: 15px;
+        }
+        footer a {
+            color: #FFFFFF; /* Set your desired link (anchor) color */
         }
         .ticket-container div,
         .contact-container div,
@@ -71,19 +81,25 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin: 5px 0;
+            margin: 10px;
         }
         .ticket-container label,
         .contact-container label,
         .check-ticket-container label {
+            align-items: center;
             width: 150px;
         }
         .ticket-container input,
         .contact-container input,
         .check-ticket-container input {
             flex: 1;
-            padding: 5px;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
         }
+        
+        
+        
     </style>
 </head>
 <body>
@@ -129,8 +145,13 @@
         <div>
             <input type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
         </div>
-        <button onclick="submitTicket()">Submit</button>
-        <button onclick="backToHomePage()">Back to Home Page</button>
+        
+        <div>
+            <button onclick="submitTicket()">Submit</button>
+        </div>
+        <div>
+            <button onclick="backToHomePage()">Back to Home Page</button>
+        </div>
     </div>
     <div class="contact-container">
         <!-- Add content for the Contact Us page -->
@@ -146,7 +167,7 @@
         <button onclick="backToHomePage()">Back to Home Page</button>
     </div>
     <footer>
-        <a href="https://github.com/aka1122">Aka</a>製作
+        <a href="https://github.com/aka1122">Aka</a> 製作
     </footer>
 
     <script>
@@ -176,11 +197,12 @@
         }
 
         function hideAllContainers() {
-            document.querySelector('.window').style display = 'none';
+            document.querySelector('.window').style.display = 'none';
             document.querySelector('.button-container').style.display = 'none';
             document.querySelector('.ticket-container').style.display = 'none';
             document.querySelector('.contact-container').style.display = 'none';
             document.querySelector('.check-ticket-container').style.display = 'none';
+            
         }
 
         function backToHomePage() {
