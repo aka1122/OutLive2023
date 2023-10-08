@@ -55,9 +55,9 @@
         }
 
         img {
-            max-width: 90%;
+            max-width: 95%;
             /* Ensure the image does not exceed the width of the container */
-            max-height: 90%;
+            max-height: 95%;
             /* Ensure the image does not exceed the height of the container */
             border-radius: 5px;
         }
@@ -71,10 +71,11 @@
             height: 30%;
             padding-bottom: 10%;
         }
-
+        
         .ticket-container,
-        .contact-container,
-        .check-ticket-container {
+        .info-container,
+        .check-ticket-container,
+        .contact-container{
             display: none;
             /* Initially hide the ticket, contact, and check-ticket containers */
             width: 80%;
@@ -96,6 +97,7 @@
             border-radius: 10px;
             cursor: pointer;
             align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         footer {
@@ -104,6 +106,7 @@
             right: 0;
             color: white;
             padding: 15px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         footer a {
@@ -150,16 +153,21 @@
             <img src="https://img.alicdn.com/imgextra/i1/2216671662746/O1CN01A4AY7O1W9iTwWMba2_!!2216671662746-2-ampmedia.png" alt="Description of the image">
         </div>
     </div>
+    
     <div class="button-container">
-        <button onclick="buyTicket()">Buy Ticket</button>
-        <button onclick="showContactPage()">Contact Us</button>
-        <button onclick="showCheckTicketPage()">Check Ticket</button>
+        <button onclick="buyTicket()">購票</button>
+        <button onclick="showInfoPage()">樂隊介紹</button>
+        <button onclick="showCheckTicketPage()">訂單查詢</button>
+        <button onclick="showContactPage()">聯絡我們</button>
     </div>
 
     <div class="ticket-container">
         <!-- Add content for the purchased ticket container -->
         <h2>Your Ticket Information</h2>
         <p>This is your purchased ticket information.</p>
+        <div>
+            <input name="Phone" type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
 
         <h3>Personal Information</h3>
         <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
@@ -197,8 +205,13 @@
             <button onclick="backToHomePage()">Back to Home Page</button>
         </div>
     </div>
-
-
+    
+    <div class="info-container">
+        <!-- Add content for the Contact Us page -->
+        <h2>Bands</h2>
+        <button onclick="backToHomePage()">Back to Home Page</button>
+    </div>
+    
     <div class="contact-container">
         <!-- Add content for the Contact Us page -->
         <h2>Contact Us</h2>
@@ -206,6 +219,7 @@
         <p>Email: contact@example.com</p>
         <button onclick="backToHomePage()">Back to Home Page</button>
     </div>
+    
     <div class="check-ticket-container">
         <!-- Add content for the Check Ticket Detail page -->
         <h2>Check Ticket Detail</h2>
@@ -283,7 +297,10 @@
             document.getElementById('ticket-amount').value = '';
         }
 
-
+        function showInfoPage() {
+            hideAllContainers();
+            document.querySelector('.info-container').style.display = 'block';
+        }
         function showContactPage() {
             hideAllContainers();
             document.querySelector('.contact-container').style.display = 'block';
@@ -295,9 +312,11 @@
         }
 
         function hideAllContainers() {
+            document.querySelector('.title').style.display = 'none';
             document.querySelector('.window').style.display = 'none';
             document.querySelector('.button-container').style.display = 'none';
             document.querySelector('.ticket-container').style.display = 'none';
+            document.querySelector('.info-container').style.display = 'none';
             document.querySelector('.contact-container').style.display = 'none';
             document.querySelector('.check-ticket-container').style.display = 'none';
 
@@ -305,6 +324,7 @@
 
         function backToHomePage() {
             hideAllContainers();
+            document.querySelector('.title').style.display = 'block';
             document.querySelector('.window').style.display = 'block';
             document.querySelector('.button-container').style.display = 'block';
         }
