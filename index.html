@@ -153,44 +153,47 @@
         <button onclick="showContactPage()">Contact Us</button>
         <button onclick="showCheckTicketPage()">Check Ticket</button>
     </div>
-    <div class="ticket-container">
-        <!-- Add content for the purchased ticket container -->
-        <h2>Your Ticket Information</h2>
-        <p>This is your purchased ticket information.</p>
-
-        <h3>Personal Information</h3>
-        <div>
-            <label for="name">Name:</label>
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
+        
+        <div class="ticket-container">
+            <!-- Add content for the purchased ticket container -->
+            <h2>Your Ticket Information</h2>
+            <p>This is your purchased ticket information.</p>
+    
+            <h3>Personal Information</h3>
+            <div>
+                <label for="name">Name:</label>
+            </div>
+            <div>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+            </div>
+            <div>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+            </div>
+            <div>
+                <label for="ticket-amount">Ticket Amount:</label>
+            </div>
+            <div>
+                <input type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
+            </div>
+    
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            <div>
+                <button onclick="backToHomePage()">Back to Home Page</button>
+            </div>
         </div>
-        <div>
-            <input type="text" id="name" placeholder="Enter your name" required>
-        </div>
-        <div>
-            <label for="phone">Phone:</label>
-        </div>
-        <div>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required>
-        </div>
-        <div>
-            <label for="email">E-mail:</label>
-        </div>
-        <div>
-            <input type="email" id="email" placeholder="Enter your email address" required>
-        </div>
-        <div>
-            <label for="ticket-amount">Ticket Amount:</label>
-        </div>
-        <div>
-            <input type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
-        </div>
-
-        <div>
-            <button onclick="submitTicket()">Submit</button>
-        </div>
-        <div>
-            <button onclick="backToHomePage()">Back to Home Page</button>
-        </div>
-    </div>
+    </form>
     <div class="contact-container">
         <!-- Add content for the Contact Us page -->
         <h2>Contact Us</h2>
