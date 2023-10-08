@@ -32,8 +32,9 @@
         .window {
             background-color: #3B4252;
             width: 80%;
+            height: 80%;
             /* Set the width as a percentage of the viewport width */
-            padding-top: 80%;
+            /*padding-top: 80%;*/
             /* Set the height as a percentage of the width to create a square */
             position: relative;
             border-radius: 10px;
@@ -68,6 +69,7 @@
             width: 70%;
             /* Set the width of the button container to 70% for wider buttons */
             height: 30%;
+            padding-bottom: 10%;
         }
 
         .ticket-container,
@@ -153,15 +155,14 @@
         <button onclick="showContactPage()">Contact Us</button>
         <button onclick="showCheckTicketPage()">Check Ticket</button>
     </div>
-        
+
     <div class="ticket-container">
         <!-- Add content for the purchased ticket container -->
         <h2>Your Ticket Information</h2>
         <p>This is your purchased ticket information.</p>
 
         <h3>Personal Information</h3>
-        <form method="POST" id="my-form"
-            action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
+        <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
             <div>
                 <label for="name">Name:</label>
             </div>
@@ -186,18 +187,18 @@
             <div>
                 <input name="Ticket Amount" type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
             </div>
-    
+
             <div>
                 <button type="submit">Submit</button>
             </div>
         </form>
-        
+
         <div>
             <button onclick="backToHomePage()">Back to Home Page</button>
         </div>
     </div>
-    
-    
+
+
     <div class="contact-container">
         <!-- Add content for the Contact Us page -->
         <h2>Contact Us</h2>
@@ -222,14 +223,14 @@
                 e.preventDefault();
                 const data = new FormData(form);
                 const action = e.target.action;
-                
+
                 fetch(action, {
-                  method: 'POST',
-                  body: data,
-                })
-                .then(() => {
-                  alert("Success!");
-                })
+                        method: 'POST',
+                        body: data,
+                    })
+                    .then(() => {
+                        alert("Success!");
+                    })
             });
         });
 
@@ -261,7 +262,7 @@
         function submitTicket() {
             // Handle the submission of the ticket information here
             alert('Ticket submitted successfully!');
-            
+
             // Handle the submission of the ticket information
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
@@ -273,7 +274,7 @@
             // Send data to Google Apps Script
             submitDataToGoogleSheet(name, phone, email, ticketAmount);
         }
-        
+
         function clearFormFields() {
             // Clear input fields
             document.getElementById('name').value = '';
@@ -281,7 +282,7 @@
             document.getElementById('email').value = '';
             document.getElementById('ticket-amount').value = '';
         }
-        
+
 
         function showContactPage() {
             hideAllContainers();
@@ -307,7 +308,6 @@
             document.querySelector('.window').style.display = 'block';
             document.querySelector('.button-container').style.display = 'block';
         }
-
     </script>
 </body>
 
