@@ -247,7 +247,7 @@
             // Perform client-side validation here if needed
 
             // Send data to Google Apps Script
-            submitDataToGoogleScript(name, phone, email, ticketAmount);
+            submitDataToGoogleSheet(name, phone, email, ticketAmount);
         }
         
         function clearFormFields() {
@@ -258,7 +258,7 @@
             document.getElementById('ticket-amount').value = '';
         }
         
-        function submitDataToGoogleScript(name, phone, email, ticketAmount) {
+        function submitDataToGoogleSheet(name, phone, email, ticketAmount) {
             const scriptURL = "YOUR_GOOGLE_APPS_SCRIPT_URL";
             const data = new FormData();
             data.append('Name', name);
@@ -306,24 +306,6 @@
             document.querySelector('.button-container').style.display = 'block';
         }
 
-        function submitDataToGoogleSheet() {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const ticketAmount = document.getElementById('ticket-amount').value;
-
-            const scriptURL = "https://script.google.com/macros/s/AKfycbxbIPVDxMg7f_afRWgiGH0FF9F9JQThim7IDoqi5-DxWy4aPbqC1CB7HfGF-bbSAC-v/exec";
-            const requestURL = `${scriptURL}?type=saveData&Name=${name}&Phone=${phone}&Email=${email}&TicketAmount=${ticketAmount}`;
-
-            fetch(requestURL)
-                .then(response => response.text())
-                .then(data => {
-                    alert(data); // Display the response from Google Apps Script
-                })
-                .catch(error => {
-                    // Handle any errors
-                });
-        }
     </script>
 </body>
 
