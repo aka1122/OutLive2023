@@ -19,17 +19,29 @@
           text-align: center;
         }
         
+        .grid-container2 {
+            align-content: space-around;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 20% 70%;
+            gap: 5%;
+        }
+        
+        .grid-container2 > div {
+          text-align: center;
+        }
+        
         
         body {
             background-color: #2E3440;
             color: white;
             /* Set text color to white */
-            font-size: 18px;
+            font-size: 14px;
             /* Increase the font size for the entire page */
             display: flex;
-            justify-content: center;
+            justify-content: end;
             align-items: center;
-            height: 700px;
+            height: 400px;
 
             flex-direction: column;
             /* Center content vertically and top-aligned horizontally */
@@ -38,12 +50,10 @@
         }
 
         .title {
-            margin-left: auto;
-            margin-right: auto;
             align-items: center;
             color: white;
             /* Set text color to white */
-            font-size: 18px;
+            font-size: 16px;
             /* Increase the font size for the entire page */
         }
 
@@ -51,10 +61,14 @@
             background-color: #3B4252;
             margin-left: auto;
             margin-right: auto;
-            height: 100%;
+            /*height: 100%;*/
+            /*padding-left: 90%;*/
+            
+            width: 90%;
+            padding-top: 0%;
             /* Set the width as a percentage of the viewport width */
-            padding-left: 100%;
             /* Set the height as a percentage of the width to create a square */
+            
             position: relative;
             border-radius: 10px;
             align-items: center;
@@ -97,13 +111,12 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            padding-top: 5%;
+            padding-top: 5px;
             /* Set the width of the button container to 70% for wider buttons */
-            padding-bottom: 10%;
         }
         
         button {
-            margin-top: 15px;
+            margin-top: 10px;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
@@ -113,7 +126,7 @@
             background-color: #4C566A;
             background-color: rgba(76, 86, 106, 0.3);
             color: white;
-            font-size: 85%;
+            font-size: 100%;
             /* Adjust the font size as needed */
             padding: 10px;
             border: none;
@@ -126,8 +139,9 @@
             position: fixed;
             bottom: 0;
             right: 0;
+            font-size: 1px;
             color: white;
-            padding: 15px;
+            padding: 10px;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -183,43 +197,46 @@
             <button onclick="showCheckTicketPage()">訂單查詢</button>
             <button onclick="showContactPage()">聯絡我們</button>
         </div>
-    
+    </div>
+    <div class="grid-container2">
         <div class="ticket-container">
     
             <h3>Personal Information</h3>
             <!-- official -->
             <!-- <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyUjnNi54m5unw0SMhViNI-sKoTmZW2DUXIKCuh24wdkrqT7T0lpoLHf1LdMX4Ypm_-/exec"> -->
             <!-- debug -->
-            <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
-                <div>
-                    <label for="name">Name:</label>
-                </div>
-                <div>
-                    <input name="Name" type="text" id="name" placeholder="Enter your name" required>
-                </div>
-                <div>
-                    <label for="phone">Phone:</label>
-                </div>
-                <div>
-                    <input name="Phone" type="tel" id="phone" placeholder="Enter your phone number" required>
-                </div>
-                <div>
-                    <label for="email">E-mail:</label>
-                </div>
-                <div>
-                    <input name="Email" type="email" id="email" placeholder="Enter your email address" required>
-                </div>
-                <div>
-                    <label for="ticket-amount">Ticket Amount:</label>
-                </div>
-                <div>
-                    <input name="Ticket Amount" type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
-                </div>
-    
-                <div>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
+            <div>
+                <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
+                    <div>
+                        <label for="name">Name:</label>
+                    </div>
+                    <div>
+                        <input name="Name" type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone:</label>
+                    </div>
+                    <div>
+                        <input name="Phone" type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label>
+                    </div>
+                    <div>
+                        <input name="Email" type="email" id="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div>
+                        <label for="ticket-amount">Ticket Amount:</label>
+                    </div>
+                    <div>
+                        <input name="Ticket Amount" type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
+                    </div>
+        
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
     
             <div>
                 <button onclick="backToHomePage()">Back to Home Page</button>
@@ -275,8 +292,7 @@
 
         function buyTicket() {
             hideAllContainers();
-            document.querySelector('.grid-container').style.display = 'grid';
-            document.querySelector('.ticket-container').style.display = 'grid';
+            document.querySelector('.grid-container2').style.display = 'grid';
 
             // Get the values from the input fields
             const name = document.getElementById('name').value;
