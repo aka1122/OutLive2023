@@ -211,6 +211,12 @@
                         <input name="Name" type="text" id="name" placeholder="Enter your name" required>
                     </div>
                     <div>
+                        <label for="hkid">HKID:</label>
+                    </div>
+                    <div>
+                        <input name="HKID" type="int" id="hkid" placeholder="Enter first 4-digit of HKID" required>
+                    </div>
+                    <div>
                         <label for="phone">Phone:</label>
                     </div>
                     <div>
@@ -294,6 +300,7 @@
 
             // Get the values from the input fields
             const name = document.getElementById('name').value;
+            const hkid = document.getElementById('hkid').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const ticketAmount = document.getElementById('ticket-amount').value;
@@ -301,6 +308,7 @@
             // Create a data object to send to the server
             const data = {
                 name,
+                hkid,
                 phone,
                 email,
                 ticketAmount
@@ -319,6 +327,7 @@
 
             // Handle the submission of the ticket information
             const name = document.getElementById('name').value;
+            const hkid = document.getElementById('hkid').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const ticketAmount = document.getElementById('ticket-amount').value;
@@ -326,7 +335,7 @@
             // Perform client-side validation here if needed
 
             // Send data to Google Apps Script
-            submitDataToGoogleSheet(name, phone, email, ticketAmount);
+            submitDataToGoogleSheet(name, hkid, phone, email, ticketAmount);
             
             clearFormFields();
         }
@@ -334,6 +343,7 @@
         function clearFormFields() {
             // Clear input fields
             document.getElementById('name').value = '';
+            document.getElementById('hkid').value = '';
             document.getElementById('phone').value = '';
             document.getElementById('email').value = '';
             document.getElementById('ticket-amount').value = '';
