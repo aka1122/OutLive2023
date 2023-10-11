@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website Title</title>
     <style>
-    @media (max-width: 768px) {
+    @media (max-width: 1920px) {
         body {
             background-color: #2E3440;
             color: white;
@@ -305,15 +305,18 @@
 
         function showInfoPage() {
             hideAllContainers();
+            navigateAwayFromHomePage();
             document.querySelector('.info-container').style.display = 'block';
         }
         function showContactPage() {
             hideAllContainers();
+            navigateAwayFromHomePage();
             document.querySelector('.contact-container').style.display = 'block';
         }
 
         function showCheckTicketPage() {
             hideAllContainers();
+            navigateAwayFromHomePage();
             document.querySelector('.check-ticket-container').style.display = 'block';
         }
 
@@ -327,7 +330,32 @@
             document.querySelector('.check-ticket-container').style.display = 'none';
 
         }
-
+        
+        let onHomePage = true; // Flag to track if the user is on the home page initially
+    
+        // Function to handle the back button press
+        function handleBackButton() {
+            if (!onHomePage) {
+                // If not on the home page, go back to the home page
+                backToHomePage();
+            } else {
+                // If already on the home page, handle it as needed (e.g., exit the app)
+                // You can add your custom logic here.
+                alert('You are already on the home page.');
+                // You might want to provide an option to exit the app or perform other actions.
+            }
+        }
+    
+        // Add an event listener for the popstate event
+        window.onpopstate = function(event) {
+            handleBackButton();
+        }
+    
+        // Function to update the flag when navigating away from the home page
+        function navigateAwayFromHomePage() {
+            onHomePage = false;
+        }
+        
         function backToHomePage() {
             hideAllContainers();
             document.querySelector('.title').style.display = 'block';
