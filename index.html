@@ -14,7 +14,6 @@
             grid-template-rows: 18% 70% 62% 10%;
             gap: 5%;
         }
-        
         .grid-container > div {
           text-align: center;
         }
@@ -23,10 +22,8 @@
             align-content: space-around;
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 20% 70%;
-            gap: 15%;
+            grid-template-rows: 20% 20%;
         }
-        
         .grid-container2 > div {
           text-align: start;
         }
@@ -292,7 +289,8 @@
 
         function buyTicket() {
             hideAllContainers();
-            document.querySelector('.grid-container2').style.display = 'grid';
+            document.querySelector('.grid-container2').style.display = 'grid';            
+            document.querySelector('.ticket-container').style.display = 'block';
 
             // Get the values from the input fields
             const name = document.getElementById('name').value;
