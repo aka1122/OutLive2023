@@ -27,6 +27,23 @@
         .grid-container2 > div {
           text-align: start;
         }
+        input[type=text],
+        input[type=email],
+        input[type=number] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 ;
+            border: none;
+            background: #f1f1f1;
+        }
+        iinput[type=text],
+        input[type=email],
+        input[type=number] {
+            background-color: #ddd;
+            width: 100%;
+            outline: none;
+        }
+        
         
         
         body {
@@ -204,6 +221,7 @@
             <!-- debug -->
             <div>
                 <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
+
                     <div>
                         <label for="name">Name:</label>
                     </div>
@@ -214,13 +232,13 @@
                         <label for="hkid">HKID:</label>
                     </div>
                     <div>
-                        <input name="HKID" type="int" id="hkid" placeholder="Enter first 4-digit of HKID" required>
+                        <input name="HKID" type="number" id="hkid" placeholder="Enter first 4-digit of HKID" required>
                     </div>
                     <div>
                         <label for="phone">Phone:</label>
                     </div>
                     <div>
-                        <input name="Phone" type="tel" id="phone" placeholder="Enter your phone number" required>
+                        <input name="Phone" type="number" id="phone" placeholder="Enter your phone number" required>
                     </div>
                     <div>
                         <label for="email">E-mail:</label>
