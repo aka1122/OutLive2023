@@ -236,7 +236,7 @@
                     </div>
         
                     <div>
-                        <button type="submit">Submit</button>
+                        <button type="submit" onclick="clearFormFields()">Submit</button>
                     </div>
                 </form>
             </div>
@@ -319,25 +319,6 @@
 
             // You would typically send the data to a server and then use the Google Sheets API
             // to add it to a Google Sheet. You'll need server-side code to do this securely.
-        }
-
-        function submitTicket() {
-            // Handle the submission of the ticket information here
-            alert('Ticket submitted successfully!');
-
-            // Handle the submission of the ticket information
-            const name = document.getElementById('name').value;
-            const hkid = document.getElementById('hkid').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const ticketAmount = document.getElementById('ticket-amount').value;
-
-            // Perform client-side validation here if needed
-
-            // Send data to Google Apps Script
-            submitDataToGoogleSheet(name, hkid, phone, email, ticketAmount);
-            
-            clearFormFields();
         }
 
         function clearFormFields() {
