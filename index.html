@@ -8,10 +8,12 @@
     @media (max-width: 1920px) {
         
         .grid-container {
-            align-content: space-around;
+            float: left;
+            width: 90%;
+            align-content: space-even;
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 18% 90% 62% 10%;
+            grid-template-rows: 22% 130% 62%;
             gap: 5%;
         }
         .grid-container > div {
@@ -55,8 +57,8 @@
             display: flex;
             justify-content: end;
             align-items: center;
-            height: 400px;
-
+            
+            width: 100%;
             flex-direction: column;
             /* Center content vertically and top-aligned horizontally */
             position: center;
@@ -72,27 +74,21 @@
         }
 
         .window {
-            background-color: #3B4252;
-            margin-left: auto;
-            margin-right: auto;
             /*height: 100%;*/
             /*padding-left: 90%;*/
+
+            width: 100%;
             
-            width: 90%;
-            padding-top: 0%;
             /* Set the width as a percentage of the viewport width */
             /* Set the height as a percentage of the width to create a square */
             
             position: relative;
             border-radius: 10px;
-            align-items: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
         }
 
         .content {
             position: absolute;
-            left: 0;
-            right: 0;
             width: 100%;
             height: 100%;
             display: flex;
@@ -102,9 +98,10 @@
         }
 
         img {
-            max-width: 95%;
+            display: flex;
+            max-width: 100%;
             /* Ensure the image does not exceed the width of the container */
-            max-height: 95%;
+            max-height: 100%;
             /* Ensure the image does not exceed the height of the container */
             border-radius: 5px;
         }
@@ -200,9 +197,9 @@
 <body>
     <div class="grid-container">
         <div class="title">
-            <h2>
+            <h1>
                 <font style="font-family:'FZYaoti';">逃出病房文化祭 2023</font>
-            </h2>
+            </h1>
         </div>
         
         <div class="window">
@@ -219,6 +216,7 @@
             <button onclick="showContactPage()">聯絡我們</button>
         </div>
     </div>
+    
     <div class="grid-container2">
         <div class="ticket-container">
     
