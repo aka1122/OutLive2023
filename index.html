@@ -34,7 +34,7 @@
         input[type=number] {
             width: 100%;
             padding: 15px;
-            margin: 5px 0 ;
+            margin: 5px;
             border: none;
             background: #f1f1f1;
         }
@@ -385,38 +385,6 @@
             document.querySelector('.contact-container').style.display = 'none';
             document.querySelector('.check-ticket-container').style.display = 'none';
 
-        }
-        
-        let onHomePage = true; // Flag to track if the user is on the home page initially
-    
-        // Function to handle the back button press
-        function handleBackButton() {
-            if (!onHomePage) {
-                // If not on the home page, go back to the home page
-                backToHomePage();
-            } else {
-                // If already on the home page, handle it as needed (e.g., exit the app)
-                // You can add your custom logic here.
-                alert('You are already on the home page.');
-                // You might want to provide an option to exit the app or perform other actions.
-            }
-        }
-        //trigger a confirmation dialog asking if they really want to leave the current page
-        window.addEventListener('beforeunload', function (e) {
-            e.preventDefault();
-            e.returnValue = '';
-        });
-    
-        // Add an event listener for the popstate event
-        window.onpopstate = function(event) {
-            handleBackButton();
-            // Prevent the default browser behavior
-            window.history.pushState(null, '', window.location.href);
-        }
-    
-        // Function to update the flag when navigating away from the home page
-        function navigateAwayFromHomePage() {
-            onHomePage = false;
         }
         
         function backToHomePage() {
