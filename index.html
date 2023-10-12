@@ -1,398 +1,449 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>逃出病房文化祭2023</title>
+    <title>CSS Website Layout</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    @media (max-width: 1920px) {
-        
-        .grid-container {
-            float: left;
-            width: 90%;
-            align-content: space-even;
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 22% 130% 62%;
-            gap: 5%;
+        * {
+            box-sizing: border-box;
         }
-        .grid-container > div {
-          text-align: center;
-        }
-        
-        .grid-container2 {
-            align-content: space-around;
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 20% 20%;
-        }
-        .grid-container2 > div {
-          text-align: start;
-        }
-        input[type=text],
-        input[type=email],
-        input[type=number] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px;
-            border: none;
-            background: #f1f1f1;
-        }
-        iinput[type=text],
-        input[type=email],
-        input[type=number] {
-            background-color: #ddd;
-            width: 100%;
-            outline: none;
-        }
-        
-        
-        
+
         body {
-            background-color: #2E3440;
+            margin: 0;
+            background-image: url('https://cdn.discordapp.com/attachments/752877211064860773/1161713518198915102/Outlive_graphic_poster_v2_small_-01.jpg?ex=65394d06&is=6526d806&hm=f41209ccc189d0e11b37730fc96c4160404670e31f040a782accdfc2ea606be6&');
+            background-size: cover;
+        }
+
+        /* Style the header */
+
+        .header {
+            float: left;
+            width: 100%;
+            padding: 5px;
+            text-align: center;
             color: white;
-            /* Set text color to white */
-            font-size: 14px;
-            /* Increase the font size for the entire page */
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            
+        }
+
+        /* Create three equal columns that floats next to each other */
+
+        .column {
+            float: left;
             width: 100%;
-            flex-direction: column;
-            /* Center content vertically and top-aligned horizontally */
-            position: center;
-            /* Add position:relative to create a reference for the footer */
+            padding: 6px;
         }
 
-        .title {
-            align-items: center;
-            color: white;
-            /* Set text color to white */
-            font-size: 16px;
-            /* Increase the font size for the entire page */
+        /* Clear floats after the columns */
+
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
-        .window {
-            /*height: 100%;*/
-            /*padding-left: 90%;*/
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 
+        @media screen and (max-width:600px) {
+            .column {
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 3px;
+            }
+        }
+
+
+
+        /*Main Page*/
+
+        .main-container {
+            float: left;
             width: 100%;
-            
-            /* Set the width as a percentage of the viewport width */
-            /* Set the height as a percentage of the width to create a square */
-            
-            position: relative;
-            border-radius: 10px;
-            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
-        }
-
-        .content {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        img {
-            display: flex;
-            max-width: 100%;
-            /* Ensure the image does not exceed the width of the container */
-            max-height: 100%;
-            /* Ensure the image does not exceed the height of the container */
-            border-radius: 5px;
-        }
-        
-        .ticket-container,
-        .info-container,
-        .check-ticket-container,
-        .contact-container{
             display: none;
-            /* Initially hide the ticket, contact, and check-ticket containers */
-            width: 100%;
-            height: 100%;
-            align-items: center;
-        }
-        
-        
-        .button-container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding-top: 5px;
-            /* Set the width of the button container to 70% for wider buttons */
-        }
-        
-        button {
-            margin-top: 10px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            /* Add space between the square window and the buttons */
-            width: 80%;
-            /* Set the width of the buttons to 100% to keep them aligned */
-            background-color: #4C566A;
-            background-color: rgba(76, 86, 106, 0.3);
-            color: white;
-            font-size: 100%;
-            /* Adjust the font size as needed */
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        
-        a:link, a:visited {
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
+
         }
 
         footer {
             position: fixed;
             bottom: 0;
             right: 0;
-            font-size: 10px;
+            font-size: 80%;
+            font-family: 'FZYaoti';
             color: white;
-            padding: 10px;
+            padding-bottom: 15px;
+            padding-right: 10px;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         footer a {
             color: #FFFFFF;
             /* Set your desired link (anchor) color */
+            padding: 5px;
+            text-align: center;
+            color: white;
         }
 
-        .ticket-container div,
-        .contact-container div,
-        .check-ticket-container div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        a:link,
+        a:visited {
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .ticket-container label,
-        .contact-container label,
-        .check-ticket-container label {
-            align-items: center;
+        .poster {
+            float: left;
             width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
         }
 
-        .ticket-container input,
-        .contact-container input,
-        .check-ticket-container input {
-            align-items: center;
-            padding: 10px;
-            border-radius: 5px;
+        .button-container {
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
         }
-    }
+
+        button {
+            text-align: center;
+            width: 100%;
+            background-color: #4C566A;
+            background-color: rgba(76, 86, 106, 0.2);
+            color: white;
+            font-size: 100%;
+            font-family: 'FZYaoti';
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            color: white;
+            width: 100%;
+            font-size: 120%;
+            font-family: 'STFangSong';
+            padding: 5px;
+        }
+
+        label {
+            text-align: start;
+            width: 100%;
+            color: white;
+            font-size: 100%;
+            font-family: 'FZYaoti';
+            margin: 3px;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=number] {
+            width: 100%;
+            font-size: 100%;
+            font-family: 'FZYaoti';
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #f1f1f1;
+            outline: none;
+
+        }
+
+        /*Buy Ticket Page*/
+
+        .buy-ticket-container {
+            float: left;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+
+        /*Band Info Page*/
+
+        .band-info-container {
+            display: none;
+            float: left;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+
+        .band-title {}
+
+        /*Ticket checking Page*/
+
+        .check-ticket-container {
+            display: none;
+            float: left;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+
+        /*Contact Page*/
+
+        .contact-container {
+            display: none;
+            float: left;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="title">
+    <div class="main-container">
+        <div class="header">
             <h1>
                 <font style="font-family:'FZYaoti';">逃出病房文化祭 2023</font>
             </h1>
         </div>
-        
-        <div class="window">
-            <div class="content">
-                <!-- Add an image to the center window -->
-                <img src="https://media.discordapp.net/attachments/1159303802256642162/1161562879674290296/Outlive_graphic_poster_v2_small_-01.jpg?ex=6538c0bb&is=65264bbb&hm=ac3c523b5908919bc756fdfea6098e8540cbbc6cad261f4a85aea1e4082eb10b&=&width=537&height=671" alt="Description of the image">
-            </div>
-        </div>
-        
-        <div class="button-container">
-            <button onclick="buyTicket()">購票</button>
-            <button onclick="showInfoPage()">樂隊介紹</button>
-            <button onclick="showCheckTicketPage()">訂單查詢</button>
-            <button onclick="showContactPage()">聯絡我們</button>
-        </div>
-    </div>
-    
-    <div class="grid-container2">
-        <div class="ticket-container">
-    
-            <h3>Personal Information</h3>
-            <!-- official -->
-            <!-- <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyUjnNi54m5unw0SMhViNI-sKoTmZW2DUXIKCuh24wdkrqT7T0lpoLHf1LdMX4Ypm_-/exec"> -->
-            <!-- debug -->
-            <div>
-                <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
 
-                    <div>
-                        <label for="name">Name:</label>
-                    </div>
-                    <div>
-                        <input name="Name" type="text" id="name" placeholder="Enter your name" required>
-                    </div>
-                    <div>
-                        <label for="hkid">HKID:</label>
-                    </div>
-                    <div>
-                        <input name="HKID" type="number" id="hkid" placeholder="Enter first 4-digit of HKID" required>
-                    </div>
-                    <div>
-                        <label for="phone">Phone:</label>
-                    </div>
-                    <div>
-                        <input name="Phone" type="number" id="phone" placeholder="Enter your phone number" required>
-                    </div>
-                    <div>
-                        <label for="email">E-mail:</label>
-                    </div>
-                    <div>
-                        <input name="Email" type="email" id="email" placeholder="Enter your email address" required>
-                    </div>
-                    <div>
-                        <label for="ticket-amount">Ticket Amount:</label>
-                    </div>
-                    <div>
-                        <input name="Ticket Amount" type="number" id="ticket-amount" placeholder="Enter the number of tickets" required>
-                    </div>
-        
-                    <div>
-                        <button type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-    
-            <div>
-                <button onclick="backToHomePage()">Back to Home Page</button>
-            </div>
+        <div class="row">
+            <img class="poster contact-area" src="https://media.discordapp.net/attachments/1159303802256642162/1161562879674290296/Outlive_graphic_poster_v2_small_-01.jpg?ex=6538c0bb&is=65264bbb&hm=ac3c523b5908919bc756fdfea6098e8540cbbc6cad261f4a85aea1e4082eb10b&=&width=537&height=671" alt="Description of the image">
         </div>
-        
-        <div class="info-container">
-            <!-- Add content for the Contact Us page -->
-            <h2>Bands</h2>
-            <button onclick="backToHomePage()">Back to Home Page</button>
-        </div>
-        
-        <div class="contact-container">
-            <!-- Add content for the Contact Us page -->
-            <h2>Contact Us</h2>
-            <p>You can contact us through the following means:</p>
-            <p><font size="4">Email: outlive.2023@gmail.com</font></p>
-            <a href="https://www.instagram.com/outlive.2023/">
-                <font size="4">Instagram: outlive.2023</font></a>
-                
-            <button onclick="backToHomePage()">Back to Home Page</button>
-        </div>
-        
-        <div class="check-ticket-container">
-            <!-- Add content for the purchased ticket container -->
-            <h2>Check Ticket Information</h2>
-            <p>Please input your order number</p>
-            <div>
-                <input name="Phone" type="tel" id="phone" placeholder="Enter your phone number" required>
+
+
+        <div class="row button-container">
+            <div class="column">
+                <button onclick="buyTicketPage()">購票</button>
             </div>
-            <button onclick="backToHomePage()">Back to Home Page</button>
+
+            <div class="column">
+                <button onclick="bandInfoPage()">樂隊簡介</button>
+            </div>
+
+            <div class="column">
+                <button onclick="checkTicketPage()">訂單查詢</button>
+            </div>
+
+            <div class="column">
+                <button onclick="contactPage()">聯絡我們</button>
+            </div>
+
+            <div class="column">
+
+            </div>
+
+            <footer>
+                <a href="https://github.com/aka1122">A k a</a>製作
+            </footer>
         </div>
     </div>
 
-    <footer>
-        <a href="https://github.com/aka1122">Aka</a> 製作
-    </footer>
+    <div class="buy-ticket-container">
+        <div class="header">
+            <h3>
+                <font style="font-family:'FZYaoti';">個人資料</font>
+            </h3>
+        </div>
+        <div class="row">
+            <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
+
+                <div>
+                    <label class="column" for="name">英文全名:</label>
+                </div>
+                <div>
+                    <input name="Name" type="text" id="name" placeholder="e.g. Chan Tai Man" required>
+                </div>
+                <div>
+                    <label class="column" for="hkid">香港身份證首4位數字:</label>
+                </div>
+                <div>
+                    <input name="HKID" type="number" id="hkid" placeholder="1234" required>
+                </div>
+                <div>
+                    <label class="column" for="phone">聯絡電話:</label>
+                </div>
+                <div>
+                    <input name="Phone" type="number" id="phone" placeholder="1234 5678" required>
+                </div>
+                <div>
+                    <label class="column" for="email">E-mail:</label>
+                </div>
+                <div>
+                    <input name="Email" type="email" id="email" placeholder="xxxxx@gmail.com" required>
+                </div>
+                <div>
+                    <label class="column" for="ticket-amount">購票數量:</label>
+                </div>
+                <div>
+                    <input name="Ticket Amount" type="number" id="ticket-amount" placeholder="1" required>
+                </div>
+
+                <div class="column">
+                </div>
+
+                <div class="column">
+                    <button type="submit">提交</button>
+                </div>
+            </form>
+        </div>
+        <div class="column">
+            <button onclick="backToMainPage()">返回主頁</button>
+        </div>
+
+    </div>
+
+    <div class="band-info-container">
+
+        <div class="header">
+            <h3>
+                <font style="font-family:'FZYaoti';">樂隊簡介</font>
+            </h3>
+        </div>
+
+        <div class="row">
+            <div>
+                <label class="column" for="name">Band 1:</label>
+                <img class="poster contact-area" src="https://media.discordapp.net/attachments/679695819368300551/1161736725584949258/Katas_PR.jpg?ex=653962a3&is=6526eda3&hm=1d1f5c6d786256159c4962252f71571156c883808b0815f5484c83c026271d53&=&width=702&height=702" alt="KATAS">
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div>
+                <label class="column" for="name">Band 2:</label>
+                <img class="poster contact-area" src="https://cdn.discordapp.com/attachments/679695819368300551/1161727570488868975/PR.jpeg?ex=65395a1c&is=6526e51c&hm=0cc80d44f57f84249bba1758e61da0367cf5c45fd982617b582d812a2f2b0986&" alt="midnight-pavilion">
+                <div>
+                    <p>樂隊名稱取自一篇唐詩，由4位喜歡日本音樂的成員組成，希望像古人寫詩詞一樣，以音樂來描繪我們所見的世界。</p>
+                    <p>- 比起太陽的照亮，</p>
+                    <p style="text-align: end;">夜裡的冒險者更渴望有月光相伴 -</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label class="column" for="name">Band 3:</label>
+                <img class="poster contact-area" src="https://media.discordapp.net/attachments/679695819368300551/1161736726033744022/Survivorchip_PR.jpg?ex=653962a3&is=6526eda3&hm=6fa3b19083e1a5d45ab403610c23c8166dbf417745316f307fd4bb43e7888427&=&width=702&height=702" alt="survivor-chip">
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label class="column" for="name">Band 4:</label>
+                <img class="poster contact-area" src="https://cdn.discordapp.com/attachments/752877211064860773/1161744212816044042/qm.jpg?ex=6539699c&is=6526f49c&hm=6658720d3576331f279d48444f0c7d16ef225615279c66defc7f15f546f223d9&" alt="sp-band">
+            </div>
+
+        </div>
+
+        <div class="column button-container">
+            <button onclick="backToMainPage()">返回主頁</button>
+        </div>
+
+    </div>
+
+    <div class="check-ticket-container">
+        <div class="header">
+            <h3>
+                <font style="font-family:'FZYaoti';">訂單查詢</font>
+            </h3>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div>
+                    <label class="column">請輸入你的個人資料以便查找訂單。</label>
+                </div>
+                <div class="column"></div>
+                <div>
+                    <label class="column" for="name">英文全名:</label>
+                </div>
+                <div>
+                    <input name="Name" type="text" id="name" placeholder="e.g. Chan Tai Man" required>
+                </div>
+                <div>
+                    <label class="column" for="hkid">香港身份證首4位數字:</label>
+                </div>
+                <div>
+                    <input name="HKID" type="number" id="hkid" placeholder="1234" required>
+                </div>
+                <div class="column"></div>
+                <div>
+                    <label class="column" for="order-num">或</label>
+                </div>
+                <div class="column"></div>
+                <div>
+                    <label class="column" for="order-num">訂單編號:</label>
+                </div>
+                <div>
+                    <input name="HKID" type="number" id="order-num" placeholder="0000 - 0000 0000" required>
+                </div>
+                <div class="column">
+                </div>
+
+                <div class="column">
+                    <button type="submit">提交</button>
+                </div>
+                <div class="column">
+                    <button onclick="backToMainPage()">返回主頁</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="contact-container">
+        <div class="row">
+            <div class="header">
+                <h3>
+                    <font style="font-family:'FZYaoti';">聯絡我們</font>
+                </h3>
+            </div>
+            <div class="column">
+                <label class="column" for="name">Email: outlive.2023@gmail.com</label>
+            </div>
+            <div class="column">
+                <a href="https://www.instagram.com/outlive.2023/">
+                    <font>Instagram: outlive.2023</font>
+                </a>
+            </div>
+            <div class="column button-container">
+                <button onclick="backToMainPage()">返回主頁</button>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+    </div>
+
 
     <script>
-        window.addEventListener("load", function() {
-            const form = document.getElementById('my-form');
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const data = new FormData(form);
-                const action = e.target.action;
-
-                fetch(action, {
-                        method: 'POST',
-                        body: data,
-                    })
-                    .then(() => {
-                        alert("Success!");
-                    })
-            });
-        });
-
-        function buyTicket() {
-            hideAllContainers();
-            document.querySelector('.grid-container2').style.display = 'grid';            
-            document.querySelector('.ticket-container').style.display = 'block';
-
-            // Get the values from the input fields
-            const name = document.getElementById('name').value;
-            const hkid = document.getElementById('hkid').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const ticketAmount = document.getElementById('ticket-amount').value;
-
-            // Create a data object to send to the server
-            const data = {
-                name,
-                hkid,
-                phone,
-                email,
-                ticketAmount
-            };
-
-            // Send the data to the server (in this example, just log it to the console)
-            console.log(data);
-
-            // You would typically send the data to a server and then use the Google Sheets API
-            // to add it to a Google Sheet. You'll need server-side code to do this securely.
-        }
-
-        function clearFormFields() {
-            // Clear input fields
-            document.getElementById('name').value = '';
-            document.getElementById('hkid').value = '';
-            document.getElementById('phone').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('ticket-amount').value = '';
-        }
-
-        function showInfoPage() {
-            hideAllContainers();
-            navigateAwayFromHomePage();
-            document.querySelector('.grid-container').style.display = 'grid';
-            document.querySelector('.info-container').style.display = 'block';
-        }
-        function showContactPage() {
-            hideAllContainers();
-            navigateAwayFromHomePage();
-            document.querySelector('.grid-container').style.display = 'grid';
-            document.querySelector('.contact-container').style.display = 'block';
-        }
-
-        function showCheckTicketPage() {
-            hideAllContainers();
-            navigateAwayFromHomePage();
-            document.querySelector('.grid-container').style.display = 'grid';
-            document.querySelector('.check-ticket-container').style.display = 'block';
-        }
-
-        function hideAllContainers() {
-            document.querySelector('.title').style.display = 'none';
-            document.querySelector('.window').style.display = 'none';
-            document.querySelector('.button-container').style.display = 'none';
-            document.querySelector('.ticket-container').style.display = 'none';
-            document.querySelector('.info-container').style.display = 'none';
-            document.querySelector('.contact-container').style.display = 'none';
-            document.querySelector('.check-ticket-container').style.display = 'none';
-
+    
+        function buyTicketPage() {
+            document.querySelector('.main-container').style.display = 'none';
+            document.querySelector('.buy-ticket-container').style.display = 'block';
         }
         
-        function backToHomePage() {
-            hideAllContainers();
-            document.querySelector('.title').style.display = 'block';
-            document.querySelector('.window').style.display = 'block';
-            document.querySelector('.button-container').style.display = 'flex';
+        function bandInfoPage() {
+            document.querySelector('.main-container').style.display = 'none';
+            document.querySelector('.band-info-container').style.display = 'block';
         }
+        function checkTicketPage() {
+            document.querySelector('.main-container').style.display = 'none';
+            document.querySelector('.check-ticket-container').style.display = 'block';
+        }
+        function contactPage() {
+            document.querySelector('.main-container').style.display = 'none';
+            document.querySelector('.contact-container').style.display = 'block';
+        }
+        function backToMainPage() {
+            document.querySelector('.main-container').style.display = 'block';
+            document.querySelector('.buy-ticket-container').style.display = 'none';
+            document.querySelector('.band-info-container').style.display = 'none';
+            document.querySelector('.check-ticket-container').style.display = 'none';
+            document.querySelector('.contact-container').style.display = 'none';
+        }
+        
     </script>
 </body>
 
