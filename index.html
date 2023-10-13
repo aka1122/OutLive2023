@@ -194,6 +194,7 @@
 
 
         .lmask {
+            display: none;
             position: absolute;
             height: 100%;
             width: 100%;
@@ -530,12 +531,12 @@
 
     <script>
         window.addEventListener("load", function() {
+            document.querySelector('.lmask').style.display = 'block';
             const form = document.getElementById('my-form');
             form.addEventListener("submit", function(e) {
                 e.preventDefault();
                 const data = new FormData(form);
                 const action = e.target.action;
-                document.querySelector('.lmask').style.display = 'block';
 
                 fetch(action, {
                         method: 'POST',
@@ -543,9 +544,9 @@
                     })
                     .then(() => {
                         alert("Success!");
-                        document.querySelector('.lmask').style.display = 'none';
                     })
             });
+            document.querySelector('.lmask').style.display = 'none';
         });
 
         function buyTicketPage() {
