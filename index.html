@@ -356,6 +356,14 @@
                 <font style="font-family:'FZYaoti';">個人資料</font>
             </h3>
         </div>
+        <div>
+            <!--<p style="font-size: 14px;">-->
+            <!--    個人資料收集聲明-->
+            <!--</p>-->
+            <p style="font-size: 13px;"> 
+            <font style="font-weight: bold;">個人資料收集聲明：</font>
+                 閣下的個人資料僅為報名參與是次活動而收集。該資料將會用於發送是次活動相關的電子郵件確認信、於入場時核對閣下身份以及任何與是次活動相關必要的個人資料使用；個人資料並不會轉交予任何第三方非是次活動相關的人員或作任何第三方直接促銷的用途，並於活動完結後全部銷毀。</p>
+        </div>
         <div class="row">
             <form method="POST" id="my-form" action="https://script.google.com/macros/s/AKfycbyYFpOCvUJYOgOrVJzfzegKHE3klb_6nhqxyl9xv-IPPdE_a7w9FyV1VLdI0ZLpTzRqaA/exec">
 
@@ -467,7 +475,7 @@
     <div class="check-ticket-container">
         <div class="header">
             <h3>
-                <font style="font-family:'FZYaoti';">訂單查詢</font>
+                <font style="font-family:'FZYaoti';">訂單查詢(未開發完成)</font>
             </h3>
         </div>
 
@@ -552,15 +560,15 @@
                         body: data,
                     })
                     .then(() => {
-                        alert("Success!");
+                        alert("確認電郵已發出，請於回覆電郵附上付款證明。");
                         document.querySelector('.lmask').style.display = 'none';
                         document.querySelector('.buy-ticket-container').style.display = 'block';
                         clearFormFields();
                     })
 
             });
-         });
-         
+        });
+
         function clearFormFields() {
             // Clear input fields
             document.getElementById('name').value = '';
