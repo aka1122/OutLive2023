@@ -644,17 +644,28 @@
                     <font style="font-family:'FZYaoti';">聯絡我們</font>
                 </h3>
             </div>
+
             <div class="column">
-                <label class="column" for="name">Email: outlive.2023@gmail.com</label>
+                <label class="column" for="name">Email: outlive.2023@gmail.com&nbsp;
+                <button class="row copy-button" onclick="copyEmail()">
+                        <img class="copy" src="https://cdn.discordapp.com/attachments/679695819368300551/1163369435923492925/copy.png?ex=653f5337&is=652cde37&hm=b6ab9d2c652871ea6bce00ea085dc7ec5ae7149ad4a5423896de2336b3de23b1&"></button>
+                <div id="snackbar">複制成功</div></label>
             </div>
+
             <div class="column">
-                <a href="https://www.instagram.com/outlive.2023/">
-                    <font>Instagram: outlive.2023</font>
-                </a>
+                <label class="column" for="name">Instagram: outlive.2023&nbsp;
+                    <button class="row copy-button">
+                        <a href="https://www.instagram.com/outlive.2023/">
+                            <img class="copy" src="https://cdn.discordapp.com/attachments/679695819368300551/1163409397943377962/ig.png?ex=653f786f&is=652d036f&hm=e09a20542cfc4c58e25ca3966782fd9e9eaef97eda13286fba10e6482865abfb&">
+                        </a>
+                    </button>
+                </label>
             </div>
+
             <div class="column button-container">
                 <button onclick="backToMainPage()">返回主頁</button>
             </div>
+
             <div class="column">
             </div>
         </div>
@@ -701,6 +712,16 @@
 
         function copyText() {
             navigator.clipboard.writeText("108843889");
+
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+        }
+
+        function copyEmail() {
+            navigator.clipboard.writeText("outlive.2023@gmail.com");
 
             var x = document.getElementById("snackbar");
             x.className = "show";
