@@ -555,12 +555,22 @@
                         alert("Success!");
                         document.querySelector('.lmask').style.display = 'none';
                         document.querySelector('.buy-ticket-container').style.display = 'block';
+                        clearFormFields();
                     })
 
             });
             document.querySelector('.lmask').style.display = 'none';
             document.querySelector('.buy-ticket-container').style.display = 'block';
          });
+         
+        function clearFormFields() {
+            // Clear input fields
+            document.getElementById('name').value = '';
+            document.getElementById('hkid').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('ticket-amount').value = '';
+        }
 
         function buyTicketPage() {
             document.querySelector('.main-container').style.display = 'none';
