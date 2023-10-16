@@ -157,6 +157,15 @@
             padding-bottom: 10px;
         }
 
+        .payment-container {
+            display: none;
+            margin: auto;
+            width: min(100%, 425px);
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+
         /*Band Info Page*/
 
         .band-info-container {
@@ -212,12 +221,12 @@
             &:before {
                 content: '';
                 background-color: rgba(0, 0, 0, 0);
-                border: 5px solid rgba(0, 183, 229, 0.9);
+                border: 5px solid rgba(229, 183, 229, 0.9);
                 opacity: .9;
                 border-right: 5px solid rgba(0, 0, 0, 0);
                 border-left: 5px solid rgba(0, 0, 0, 0);
                 border-radius: 50px;
-                box-shadow: 0 0 35px #2187e7;
+                box-shadow: 0 0 35px #E5B7E5;
                 width: 50px;
                 height: 50px;
                 -moz-animation: spinPulse 1s infinite ease-in-out;
@@ -231,12 +240,12 @@
             &:after {
                 content: '';
                 background-color: rgba(0, 0, 0, 0);
-                border: 5px solid rgba(0, 183, 229, 0.9);
+                border: 5px solid rgba(229, 183, 229, 0.9);
                 opacity: .9;
                 border-left: 5px solid rgba(0, 0, 0, 0);
                 border-right: 5px solid rgba(0, 0, 0, 0);
                 border-radius: 50px;
-                box-shadow: 0 0 15px #2187e7;
+                box-shadow: 0 0 15px #E5B7E5;
                 width: 30px;
                 height: 30px;
                 -moz-animation: spinoffPulse 1s infinite linear;
@@ -253,7 +262,7 @@
             0% {
                 -moz-transform: rotate(160deg);
                 opacity: 0;
-                box-shadow: 0 0 1px #2187e7;
+                box-shadow: 0 0 1px #E5B7E5;
             }
             50% {
                 -moz-transform: rotate(145deg);
@@ -278,7 +287,7 @@
             0% {
                 -webkit-transform: rotate(160deg);
                 opacity: 0;
-                box-shadow: 0 0 1px #2187e7;
+                box-shadow: 0 0 1px #E5B7E5;
             }
             50% {
                 -webkit-transform: rotate(145deg);
@@ -531,23 +540,27 @@
 
     <script>
         window.addEventListener("load", function() {
-            document.querySelector('.lmask').style.display = 'block';
             const form = document.getElementById('my-form');
             form.addEventListener("submit", function(e) {
                 e.preventDefault();
                 const data = new FormData(form);
                 const action = e.target.action;
-
+                document.querySelector('.lmask').style.display = 'block';
+                document.querySelector('.buy-ticket-container').style.display = 'block';
                 fetch(action, {
                         method: 'POST',
                         body: data,
                     })
                     .then(() => {
                         alert("Success!");
+                        document.querySelector('.lmask').style.display = 'none';
+                        document.querySelector('.buy-ticket-container').style.display = 'block';
                     })
+
             });
             document.querySelector('.lmask').style.display = 'none';
-        });
+            document.querySelector('.buy-ticket-container').style.display = 'block';
+         });
 
         function buyTicketPage() {
             document.querySelector('.main-container').style.display = 'none';
