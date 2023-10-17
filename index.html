@@ -429,15 +429,16 @@
                 <button onclick="bandInfoPage()">樂隊簡介</button>
             </div>
 
-            <div class="column">
-                <button onclick="checkTicketPage()">訂單查詢</button>
-            </div>
+            <!--<div class="column">-->
+            <!--    <button onclick="checkTicketPage()">訂單查詢</button>-->
+            <!--</div>-->
 
             <div class="column">
                 <button onclick="contactPage()">聯絡我們</button>
             </div>
 
             <div class="column">
+                <div>&nbsp;</div>
 
             </div>
 
@@ -491,8 +492,10 @@
                 <div>
                     <label class="column" for="ticket-amount">購票數量:</label>
                 </div>
-                <div>
-                    <input name="Ticket Amount" type="number" id="ticket-amount" placeholder="1" required>
+                <div >
+                    <div>&nbsp;</div>
+                    <label name="Ticket Amount" id="ticket-amount">&nbsp;&nbsp;&nbsp;1</label>
+                    <div>&nbsp;</div>
                 </div>
 
                 <div class="column">
@@ -506,6 +509,7 @@
         <div class="column">
             <button onclick="backToMainPage()">返回主頁</button>
         </div>
+        <div>&nbsp;</div>
         <div class='lmask'></div>
 
     </div>
@@ -629,56 +633,56 @@
         <p>&nbsp;</p>
     </div>
 
-    <div class="check-ticket-container">
-        <div>&nbsp;</div>
-        <div class="header">
-            <h3>
-                <font style="font-family:'FZYaoti';">訂單查詢(未開發完成)</font>
-            </h3>
-        </div>
+    <!--<div class="check-ticket-container">-->
+    <!--    <div>&nbsp;</div>-->
+    <!--    <div class="header">-->
+    <!--        <h3>-->
+    <!--            <font style="font-family:'FZYaoti';">訂單查詢(未開發完成)</font>-->
+    <!--        </h3>-->
+    <!--    </div>-->
 
-        <div class="row">
-            <div class="column">
-                <div>
-                    <label class="column">請輸入你的個人資料以便查找訂單。</label>
-                </div>
-                <div class="column"></div>
-                <div>
-                    <label class="column" for="name">英文全名:</label>
-                </div>
-                <div>
-                    <input name="Name" type="text" id="name" placeholder="e.g. Chan Tai Man" required>
-                </div>
-                <div>
-                    <label class="column" for="hkid">香港身份證首4位數字:</label>
-                </div>
-                <div>
-                    <input name="HKID" type="number" id="hkid" placeholder="1234" required>
-                </div>
-                <div class="column"></div>
-                <div>
-                    <label class="column" for="order-num">或</label>
-                </div>
-                <div class="column"></div>
-                <div>
-                    <label class="column" for="order-num">訂單編號:</label>
-                </div>
-                <div>
-                    <input name="HKID" type="number" id="order-num" placeholder="0000 - 0000 0000" required>
-                </div>
-                <div class="column">
-                </div>
+    <!--    <div class="row">-->
+    <!--        <div class="column">-->
+    <!--            <div>-->
+    <!--                <label class="column">請輸入你的個人資料以便查找訂單。</label>-->
+    <!--            </div>-->
+    <!--            <div class="column"></div>-->
+    <!--            <div>-->
+    <!--                <label class="column" for="name">英文全名:</label>-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--                <input name="Name" type="text" id="name" placeholder="e.g. Chan Tai Man" required>-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--                <label class="column" for="hkid">香港身份證首4位數字:</label>-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--                <input name="HKID" type="number" id="hkid" placeholder="1234" required>-->
+    <!--            </div>-->
+    <!--            <div class="column"></div>-->
+    <!--            <div>-->
+    <!--                <label class="column" for="order-num">或</label>-->
+    <!--            </div>-->
+    <!--            <div class="column"></div>-->
+    <!--            <div>-->
+    <!--                <label class="column" for="order-num">訂單編號:</label>-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--                <input name="HKID" type="number" id="order-num" placeholder="0000 - 0000 0000" required>-->
+    <!--            </div>-->
+    <!--            <div class="column">-->
+    <!--            </div>-->
 
-                <div class="column">
-                    <button type="submit">提交</button>
-                </div>
-                <div class="column">
-                    <button onclick="backToMainPage()">返回主頁</button>
-                </div>
-            </div>
+    <!--            <div class="column">-->
+    <!--                <button type="submit">提交</button>-->
+    <!--            </div>-->
+    <!--            <div class="column">-->
+    <!--                <button onclick="backToMainPage()">返回主頁</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-        </div>
-    </div>
+    <!--    </div>-->
+    <!--</div>-->
 
     <div class="contact-container">
         <div>&nbsp;</div>
@@ -728,7 +732,7 @@
                 <button onclick="backToMainPage()">返回主頁</button>
             </div>
         </div>
-
+        <div>&nbsp;</div>
     </div>
 
 
@@ -815,7 +819,7 @@
             document.querySelector('.buy-ticket-container').style.display = 'none';
             document.querySelector('.payment-container').style.display = 'none';
             document.querySelector('.band-info-container').style.display = 'none';
-            document.querySelector('.check-ticket-container').style.display = 'none';
+            // document.querySelector('.check-ticket-container').style.display = 'none';
             document.querySelector('.contact-container').style.display = 'none';
         }
     </script>
