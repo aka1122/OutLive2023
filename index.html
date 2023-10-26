@@ -63,19 +63,16 @@
             bottom: 0;
             right: 0;
             font-size: 80%;
-            font-family: 'FZYaoti';
-            color: white;
             padding-bottom: 10px;
             padding-right: 5px;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         footer a {
-            color: #FFFFFF;
+            color: #DDDDDD;
             /* Set your desired link (anchor) color */
             padding: 5px;
             text-align: center;
-            color: white;
         }
 
         a:link,
@@ -118,7 +115,6 @@
             color: white;
             width: 100%;
             font-size: 100%;
-            font-family: 'STFangSong';
             padding: 5px;
         }
 
@@ -227,6 +223,29 @@
             padding-left: 30px;
             padding-right: 30px;
             padding-bottom: 10px;
+        }
+        
+        /*Aka Page*/
+
+        .aka-container {
+            display: none;
+            margin: auto;
+            height: min(100%, 425px);
+            width: min(100%, 425px);
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+        
+        .profile-container{
+            height: 30%;
+            width: 100%;
+            margin: auto;
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(76, 86, 106, 0.1);
+            
         }
 
         /*Loading Mask*/
@@ -376,7 +395,7 @@
             </div>
 
             <footer>
-                <a href="https://www.instagram.com/stationery_aoi/">A k a</a>製作
+                <a onclick="akaPage()">Aka製作</a>
             </footer>
         </div>
     </div>
@@ -635,7 +654,48 @@
         </div>
         <div>&nbsp;</div>
     </div>
-
+    
+    <div class="aka-container">
+        <div>&nbsp;</div>
+        <div class="header">
+            <h3>
+                <font style="font-family:'FZYaoti';">網頁製作者</font>
+            </h3>
+        </div>
+        
+        <div class="row">
+            <img class="poster contact-area" style="border-radius: 40px / 12.5px;" src="https://cdn.discordapp.com/attachments/679695819368300551/1163369629842948176/IMG_6007.jpg?ex=65488de6&is=653618e6&hm=ff8257e384c5863008b8dca9f1ce410b4ef525a5788678b917d3b64930d07438&" alt="about us">
+        </div>
+        
+        <div class="profile-container" style="vertical-align: text-top;"> 
+            <div>&nbsp;</div>
+            <h4 class="header">
+                <font>Aka</font>
+            </h4>
+            
+            <div style="margin: 20px; text-align: center;">
+                <p>閣夜鼓手，喜愛半夜揼Code</br>網站製作、網頁設計、</br>Android Apps開發等，</br>可客制化你的需求。</br>$.. _( : 3 ∠ )_</p>
+            </div>
+            
+            <div>&nbsp;</div>
+            <p style="text-align: center;">聯絡方式</p>
+            <a href="https://www.instagram.com/stationery_aoi/">
+                <img class="copy icon-button" style="vertical-align: sub;" src="https://cdn.discordapp.com/attachments/679695819368300551/1163409397943377962/ig.png?ex=653f786f&is=652d036f&hm=e09a20542cfc4c58e25ca3966782fd9e9eaef97eda13286fba10e6482865abfb&">&nbsp;@stationery_aoi
+            </a>
+            <div>&nbsp;</div>
+            <a href="mailto:tdman1122@gmail.com">
+                <img class="copy icon-button" style="vertical-align: sub;" src="https://cdn.discordapp.com/attachments/679695819368300551/1166990585798873088/Pngtreeemail_vector_icon_3876244.png?ex=654c7fad&is=653a0aad&hm=01cbb487b0617f36cefb45c67ba2628bab0ae83c97508a536ac9e3211556854f&">&nbsp;tdman1122@gmail.com
+            </a>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+        </div> 
+                    <div>&nbsp;</div>
+        <div class="column button-container">
+            <button onclick="backToMainPage()">返回主頁</button>
+        </div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+    </div>
 
     <script>
         window.addEventListener("load", function() {
@@ -694,6 +754,16 @@
                 x.className = x.className.replace("show", "");
             }, 3000);
         }
+        
+        function copyAkaEmail() {
+            navigator.clipboard.writeText("tdman1122@gmail.com");
+
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+        }
 
         function paymentPage() {
             document.querySelector('.buy-ticket-container').style.display = 'none';
@@ -722,6 +792,12 @@
             document.querySelector('.band-info-container').style.display = 'none';
             // document.querySelector('.check-ticket-container').style.display = 'none';
             document.querySelector('.contact-container').style.display = 'none';
+            document.querySelector('.aka-container').style.display = 'none';
+        }
+        
+        function akaPage(){
+            document.querySelector('.main-container').style.display = 'none';
+            document.querySelector('.aka-container').style.display = 'block';
         }
     </script>
 </body>
