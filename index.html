@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hant">
 
-<head> 
+<head>
     <title>「逃出病房」之夢幻異世界之旅</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +42,6 @@
         }
 
         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-
 
         @media screen and (max-width:600px) {
             .column {
@@ -184,15 +183,15 @@
             padding-right: 30px;
             padding-bottom: 10px;
         }
-        
-        .insta-container{
+
+        .insta-container {
             width: 100%;
             margin: auto;
             padding: 0px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             background-color: rgba(76, 86, 106, 0.1);
-            
+
         }
 
         .icon-button {
@@ -202,7 +201,7 @@
             box-shadow: none;
             padding: 0px;
         }
-        
+
 
         /*Ticket checking Page*/
 
@@ -225,7 +224,7 @@
             padding-right: 30px;
             padding-bottom: 10px;
         }
-        
+
         /*Aka Page*/
 
         .aka-container {
@@ -237,8 +236,8 @@
             padding-right: 30px;
             padding-bottom: 10px;
         }
-        
-        .profile-container{
+
+        .profile-container {
             height: 30%;
             width: 100%;
             margin: auto;
@@ -246,7 +245,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             background-color: rgba(76, 86, 106, 0.1);
-            
+
         }
 
         /*Loading Mask*/
@@ -356,7 +355,6 @@
                 -webkit-transform: rotate(360deg);
             }
         }
-
     </style>
 </head>
 
@@ -373,9 +371,16 @@
             <img class="poster contact-area" src="IMG_20240831_220353_546.jpg" alt="Description of the image">
         </div>
 
+        <div>
+            <div>&nbsp;</div>
+            <p style="font-size: 13px; text-align: center;">
+                <font style="font-weight: bold">感謝各位支持，門票已全數售罄。</font>
+            </p>
+        </div>
+
         <div class="row button-container">
             <div class="column">
-                <button onclick="buyTicketPage()">購票</button>
+                <button hidden onclick="buyTicketPage()">購票</button>
             </div>
 
             <div class="column">
@@ -445,14 +450,14 @@
                 <div>
                     <label class="column" for="email">購票數量:</label>
                 </div>
-                <div >
+                <div>
                     <div>&nbsp;</div>
                     <label name="Ticket Amount" id="ticket-amount">&nbsp;&nbsp;&nbsp;1</label>
                     <p style="font-size: 13px;">
-                
-                *是次活動因應場地限制需填寫個人資料，參加者每次可購買一張門票，如想購買多張門票，請於提交後重新填寫其他參加者資料。</p>
+
+                        *是次活動因應場地限制需填寫個人資料，參加者每次可購買一張門票，如想購買多張門票，請於提交後重新填寫其他參加者資料。</p>
                 </div>
-                
+
 
                 <div class="column">
                 </div>
@@ -477,11 +482,11 @@
                 <font style="font-family:'FZYaoti';">付款方式</font>
             </h3>
         </div>
-        
+
         <h4 class="header">
             <font style="">票價：$250 </font>
         </h4>
-        
+
         <div class="row">
             <div>
                 <label class="column"></label>
@@ -498,7 +503,7 @@
                 <div>&nbsp;</div>
                 <h4 class="header" style="text-align: center; text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;轉數快(FPS)</h4>
                 <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;轉數快識別碼：<label id="fps-code">108843889</label>&nbsp;&nbsp;
-                    <button class="row copy-button" onclick="copyText()">
+                <button class="row copy-button" onclick="copyText()">
                         <img class="copy" src="copy.png">
                     </button>
                 </label>
@@ -531,15 +536,15 @@
             <div>
                 <label class="column" for="name"> </label>
                 <img class="poster contact-area" src="IMG_20240831_220348_603.jpg">
-            
-                    <button class="insta-container"> 
+
+                <button class="insta-container"> 
                         <a href="https://www.instagram.com/loading.unloading.__/">
                             <p style="text-align: center;">                        
                                     <img class="copy icon-button" src="ig.png">
                                 <div>&nbsp;</div>loading/unloading</p>
                         </a>
-                    </button> 
-                    
+                    </button>
+
                 <p style="text-align: justify;">我地係女子搖滾樂團「loading / unloading」，成員包括Vocal Chloe，Guitar Yui，Bass Dash，Drum Phoebe。</p>
 
                 <p style="text-align: justify;">loading/unloading寓意我們不斷「裝載」新思路，同時也在「卸載」自我局限，以開放進取的態度表現搖滾。</p>
@@ -552,14 +557,14 @@
             <div>
                 <label class="column" for="name"> </label>
                 <img class="poster contact-area" src="IMG_20240831_220346_423.jpg" alt="203-zakkaya">
-                    <button class="insta-container"> 
+                <button class="insta-container"> 
                         <a  href="https://www.instagram.com/203zakkaya/">
                             <p style="text-align: center;">                        
                                     <img class="copy icon-button" src="ig.png">
                                 <div>&nbsp;</div>203 ZAKKAYA
                             </p>
                         </a>
-                    </button> 
+                    </button>
                 <div>
                     <p style="text-align: justify;">我哋係203雜貨屋/203 zakkaya! 我哋係由中文大學band society 相遇而組成嘅band。有vocal Vincy, guitar Angus, drum Gordon, keyboard Teddy, bass Sarah。</p>
                     <p style="text-align: justify;">大家唔只熱愛日本文化音樂，仲各自都有其它自己喜愛嘅音樂類型。組合我哋各成員嘅風格，希望203可以帶出全新獨特嘅風格俾大家！！</p>
@@ -579,7 +584,7 @@
                                 <div>&nbsp;</div>KABAANEKO
                             </p>
                         </a>
-                    </button> 
+                    </button>
                     <p style="text-align: justify;">Don’t stand still! Kabaaneko is a band where you are always jumping up!</p>
                     <p style="text-align: justify;">不准站著，Kabaaneko 永遠是向上跳的樂團！</p>
                 </div>
@@ -589,15 +594,15 @@
             <div>
                 <label class="column" for="name"> </label>
                 <img class="poster contact-area" src="IMG_20240831_223650_174.jpg" alt="but-nothing -happened">
-                
-                    <button class="insta-container"> 
+
+                <button class="insta-container"> 
                         <a href="https://www.instagram.com/butnothinghappened/">
                             <p style="text-align: center;">                        
                                     <img class="copy icon-button" src="ig.png">
                                 <div>&nbsp;</div>But Nothing Happened</p>
                         </a>
-                    </button> 
-                    
+                    </button>
+
                 <p style="text-align: justify;">隨音律躍動的本能—But Nothing Happened。以動漫之韻與日本搖滾的烈焰，點燃一座座本地的音樂神殿。</p>
 
                 <p style="text-align: justify;">在《Hong Kong VTuber Festival Vol. 1 - Link Reality》及《大炎上音樂祭》的虛擬與現實交匯處，以和弦構築次元的虹橋，凝聚引燃心靈的聖火；在《BAND A LIVE: Linking Tour!》的繁星之下，或《赤口菲花》的花瓣間翩翩起舞。</p>
@@ -674,7 +679,7 @@
         </div>
         <div>&nbsp;</div>
     </div>
-    
+
     <div class="aka-container">
         <div>&nbsp;</div>
         <div class="header">
@@ -682,21 +687,21 @@
                 <font style="font-family:'FZYaoti';">網頁製作者</font>
             </h3>
         </div>
-        
+
         <div class="row">
             <img class="poster contact-area" style="border-radius: 40px / 12.5px;" src="IMG_20240831_220341_611.jpg" alt="about us">
         </div>
-        
-        <div class="profile-container" style="vertical-align: text-top;"> 
+
+        <div class="profile-container" style="vertical-align: text-top;">
             <div>&nbsp;</div>
             <h4 class="header">
                 <font>Aka</font>
             </h4>
-            
+
             <div style="margin: 20px; text-align: center;">
                 <p>閣夜鼓手，喜愛半夜揼Code</br>網站製作、網頁設計、</br>Android Apps開發等，</br>可客制化你的需求。</br>$.. _( : 3 ∠ )_</p>
             </div>
-            
+
             <div>&nbsp;</div>
             <p style="text-align: center;">聯絡方式</p>
             <a href="https://www.instagram.com/akaaa_mp/">
@@ -708,8 +713,8 @@
             </a>
             <div>&nbsp;</div>
             <div>&nbsp;</div>
-        </div> 
-                    <div>&nbsp;</div>
+        </div>
+        <div>&nbsp;</div>
         <div class="column button-container">
             <button onclick="backToMainPage()">返回主頁</button>
         </div>
@@ -774,7 +779,7 @@
                 x.className = x.className.replace("show", "");
             }, 3000);
         }
-        
+
         function copyAkaEmail() {
             navigator.clipboard.writeText("tdman1122@gmail.com");
 
@@ -814,8 +819,8 @@
             document.querySelector('.contact-container').style.display = 'none';
             document.querySelector('.aka-container').style.display = 'none';
         }
-        
-        function akaPage(){
+
+        function akaPage() {
             document.querySelector('.main-container').style.display = 'none';
             document.querySelector('.aka-container').style.display = 'block';
         }
